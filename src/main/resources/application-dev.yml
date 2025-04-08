@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/job-finder
+    username: job-dev-user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: false
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
