@@ -6,9 +6,16 @@ spring:
     url: jdbc:postgresql://localhost:5432/job-finder
     username: job-dev-user
     password: password
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: false
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate.format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type.descriptor.sql.BasicBinder: trace
