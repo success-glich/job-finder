@@ -5,13 +5,11 @@ import com.example.job_application.Job.Finder.Application.company.dto.CompanyReq
 import com.example.job_application.Job.Finder.Application.utility.ApiResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/companies")
@@ -42,7 +40,7 @@ public class CompanyController {
 
         }
 
-        Company company = companyService.crateCompany(companyRequest);
+        Company company = companyService.createCompany(companyRequest);
 
         return ResponseEntity.ok(new ApiResponse<>(
                 true,
@@ -52,24 +50,29 @@ public class CompanyController {
     }
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<Company>> getCompanyById(@PathVariable Long id) {
-        Optional<Company> company = companyService.getCompanyById(id);
+       Company company = companyService.getCompanyById(id);
 
-        return company.map(value -> ResponseEntity.ok(new ApiResponse<>(true, "Company fetched successfully.", value))).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(new ApiResponse<>(false, "Company not found", null)));
 
+        return ResponseEntity.ok(new ApiResponse<>(true, "Company fetched successfully.", company));
     }
-
-
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateCompanyById(){
-        return ResponseEntity.ok("Route is working");
+    public ResponseEntity<ApiResponse<Company>> updateCompanyById(@Valid @RequestBody CompanyRequest companyRequest,@PathVariable Long id, BindingResult bindingResult ){
+
+        if(bindingResult.hasErrors()) return  ResponseEntity.badRequest().body(new ApiResponse<>(true,"All fields are required.",null));
+
+        Company updatedCompany = companyService.updateCompany(id,companyRequest);
+
+        return ResponseEntity.ok(new ApiResponse<>(true,"Company updated successfully.",updatedCompany));
 
     }
+
     @DeleteMapping("/{id}")
-    public  ResponseEntity<String> deleteCompanyById(){
-        return ResponseEntity.ok("Route is working");
+    public  ResponseEntity<String> deleteCompanyById(@PathVariable Long id){
+        companyService.deleteCompanyById(id);
+        return ResponseEntity.noContent().build();
     }
+
 
 
 }
