@@ -9,7 +9,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update #none | update
     show-sql: true
     properties:
       hibernate.format_sql: true
@@ -19,7 +19,9 @@ spring:
     level:
       org.hibernate.SQL: debug
       org.hibernate.type.descriptor.sql.BasicBinder: trace
+#      com.
 
+#      logging.level.com.yourcompany=TRACE  
 
 server:
   port: 8081

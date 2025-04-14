@@ -1,5 +1,6 @@
 package com.example.job_application.Job.Finder.Application.company;
 
+import com.example.job_application.Job.Finder.Application.job.Job;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -9,6 +10,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,7 +19,7 @@ import java.time.LocalDateTime;
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotNull(message = "Name is required")
@@ -34,4 +36,7 @@ public class Company {
     @LastModifiedDate
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "company")
+    private List<Job> jobs;
 }

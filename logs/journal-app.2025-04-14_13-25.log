@@ -1,0 +1,10 @@
+2025-04-14 13:25:27 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Creating a new company with name: ssl_handcrafted_baby.z1
+2025-04-14 13:25:27 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Company created successfully with ID: 0
+2025-04-14 13:25:47 PM INFO  c.e.j.J.F.A.JobFinderApplication - Starting JobFinderApplication using Java 21.0.6 with PID 12157 (/home/success/Documents/Job-Finder-Application/target/classes started by success in /home/success/Documents/Job-Finder-Application)
+2025-04-14 13:25:47 PM DEBUG c.e.j.J.F.A.JobFinderApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-14 13:25:47 PM INFO  c.e.j.J.F.A.JobFinderApplication - The following 1 profile is active: "dev"
+2025-04-14 13:25:54 PM INFO  c.e.j.J.F.A.JobFinderApplication - Started JobFinderApplication in 7.838 seconds (process running for 8.819)
+2025-04-14 13:25:56 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Creating a new company with name: mobile_reboot.dic
+2025-04-14 13:25:56 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Company created successfully with ID: 0
+2025-04-14 13:25:59 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Creating a new company with name: peso_sas.vis
+2025-04-14 13:25:59 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Company created successfully with ID: 0
