@@ -1,6 +1,7 @@
 package com.example.job_application.Job.Finder.Application.job;
 
 
+import com.example.job_application.Job.Finder.Application.job.Impl.JobServiceImpl;
 import com.example.job_application.Job.Finder.Application.job.dto.JobRequest;
 import com.example.job_application.Job.Finder.Application.utility.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class JobController {
 
 
     @Autowired
-   private JobService jobService;
+   private JobServiceImpl jobService;
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<Job>>> getAllJobs(){

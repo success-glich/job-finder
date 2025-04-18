@@ -1,8 +1,6 @@
 package com.example.job_application.Job.Finder.Application.job.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 
 
@@ -16,6 +14,6 @@ public class JobRequest {
     private Double minSalary;
     private  Double maxSalary;
 
-
+    private Long companyId;
 
 }

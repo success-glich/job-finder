@@ -1,4 +1,1 @@
-2025-04-14 15:46:12 PM INFO  c.e.j.J.F.A.Public.PublicController - Feels like temperature: 26
-2025-04-14 15:46:12 PM INFO  c.e.j.J.F.A.Public.PublicController - Weather data: com.example.job_application.Job.Finder.Application.api.response.WeatherResponse$Current@5288212
-2025-04-14 15:46:48 PM INFO  c.e.j.J.F.A.Public.PublicController - Feels like temperature: 25
-2025-04-14 15:46:48 PM INFO  c.e.j.J.F.A.Public.PublicController - Weather data: com.example.job_application.Job.Finder.Application.api.response.WeatherResponse$Current@cb4ee62
+2025-04-18 17:41:05 PM INFO  c.e.j.J.F.A.JobFinderApplication - Started JobFinderApplication in 7.785 seconds (process running for 8.819)

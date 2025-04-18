@@ -1,5 +1,7 @@
 package com.example.job_application.Job.Finder.Application.job.Impl;
 
+import com.example.job_application.Job.Finder.Application.company.Company;
+import com.example.job_application.Job.Finder.Application.company.Impl.CompanyServiceImpl;
 import com.example.job_application.Job.Finder.Application.exception.ResourceNotFoundException;
 import com.example.job_application.Job.Finder.Application.job.Job;
 import com.example.job_application.Job.Finder.Application.job.JobRepo;
@@ -17,6 +19,9 @@ public class JobServiceImpl implements JobService {
     @Autowired
     private JobRepo jobRepo;
 
+    @Autowired
+    private CompanyServiceImpl companyService;
+
 //    public void  JobService(JobRepo jobRepo){
 //        this.jobRepo = jobRepo;
 //    }
@@ -27,11 +32,15 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public Job createJob(JobRequest jobRequest) {
+
+        Long companyId =jobRequest.getCompanyId();
+        Company existingCompany = companyService.getCompanyById(companyId);
         Job job = new Job();
         job.setTitle(jobRequest.getTitle());
         job.setDescription(jobRequest.getDescription());
         job.setMinSalary(jobRequest.getMinSalary());
         job.setMaxSalary(jobRequest.getMaxSalary());
+        job.setCompany(existingCompany);
         return jobRepo.save(job);
     }
     //* return  companyRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Company not found with id: "+id));

@@ -1,8 +1,6 @@
 package com.example.job_application.Job.Finder.Application.service.external;
 
-
 import com.example.job_application.Job.Finder.Application.api.response.WeatherResponse;
-import com.example.job_application.Job.Finder.Application.company.Impl.CompanyServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
