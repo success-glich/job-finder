@@ -2,6 +2,7 @@ package com.example.job_application.Job.Finder.Application.company;
 
 import com.example.job_application.Job.Finder.Application.entity.Auditable;
 import com.example.job_application.Job.Finder.Application.job.Job;
+import com.example.job_application.Job.Finder.Application.review.Review;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -37,6 +38,9 @@ public class Company extends Auditable {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Job> jobs = new ArrayList<>();
+
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews = new ArrayList<>();
 
 //    @CreatedDate
 //    @Column(name = "created_at", updatable = false)

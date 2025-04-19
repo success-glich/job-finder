@@ -17,8 +17,11 @@ public class CompanyServiceImpl implements CompanyService {
 
     private  static  final Logger logger = LoggerFactory.getLogger(CompanyServiceImpl.class);
 
-    @Autowired
-    private CompanyRepo companyRepo;
+    private final CompanyRepo companyRepo;
+
+    public CompanyServiceImpl(CompanyRepo companyRepo) {
+        this.companyRepo = companyRepo;
+    }
 
     @Override
     public List<Company> getAllCompanies() {
