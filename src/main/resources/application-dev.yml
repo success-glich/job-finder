@@ -19,6 +19,10 @@ spring:
     level:
       org.hibernate.SQL: debug
       org.hibernate.type.descriptor.sql.BasicBinder: trace
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#    password: # Optional if Redis has no password
 #      com.
 
 #      logging.level.com.yourcompany=TRACE  
@@ -35,3 +39,7 @@ weather:
     access-key: 3b706a649b98ecec69e400ef9ae3a0b0
 
 # weather forecast api::     3b706a649b98ecec69e400ef9ae3a0b0
+
+#spring.redis.host=localhost
+#spring.redis.port=6379
+#spring.redis.password= # Optional if Redis has no password

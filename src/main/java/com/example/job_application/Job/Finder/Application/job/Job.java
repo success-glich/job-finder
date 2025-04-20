@@ -13,13 +13,14 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "jobs")
-public class Job extends Auditable {
+public class Job extends Auditable  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,9 +41,10 @@ public class Job extends Auditable {
     @Column(name = "max_salary")
     private Double maxSalary;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
+
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name="company_id", nullable = false)
     private Company company;
 

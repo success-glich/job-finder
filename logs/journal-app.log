@@ -1,12 +1,4 @@
-2025-04-19 12:17:18 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:21 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:24 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:25 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:25 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:26 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:27 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:27 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:28 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:29 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:29 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
-2025-04-19 12:17:30 PM INFO  c.e.j.J.F.A.c.I.CompanyServiceImpl - Fetching company with ID :1
+2025-04-20 23:46:48 PM INFO  c.e.j.J.F.A.JobFinderApplication - Starting JobFinderApplication using Java 21.0.6 with PID 22947 (/home/success/Documents/Job-Finder-Application/target/classes started by success in /home/success/Documents/Job-Finder-Application)
+2025-04-20 23:46:48 PM DEBUG c.e.j.J.F.A.JobFinderApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-20 23:46:48 PM INFO  c.e.j.J.F.A.JobFinderApplication - The following 1 profile is active: "dev"
+2025-04-20 23:46:54 PM INFO  c.e.j.J.F.A.JobFinderApplication - Started JobFinderApplication in 5.937 seconds (process running for 6.654)

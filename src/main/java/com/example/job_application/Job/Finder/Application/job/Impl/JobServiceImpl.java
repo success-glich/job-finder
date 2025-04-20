@@ -8,9 +8,13 @@ import com.example.job_application.Job.Finder.Application.job.JobRepo;
 import com.example.job_application.Job.Finder.Application.job.JobService;
 import com.example.job_application.Job.Finder.Application.job.dto.JobRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class JobServiceImpl implements JobService {
@@ -22,9 +26,6 @@ public class JobServiceImpl implements JobService {
     @Autowired
     private CompanyServiceImpl companyService;
 
-//    public void  JobService(JobRepo jobRepo){
-//        this.jobRepo = jobRepo;
-//    }
     @Override
     public List<Job> getAllJobs() {
         return  jobRepo.findAll();
@@ -44,12 +45,16 @@ public class JobServiceImpl implements JobService {
         return jobRepo.save(job);
     }
     //* return  companyRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Company not found with id: "+id));
+
+
     @Override
+    @Cacheable(value="job", key="#id", unless="#result == null")
     public Job getJobById(Long id) {
         return jobRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Job not found with id: "+id));
     }
 
     @Override
+    @CachePut(value = "job", key="#id")
     public Job updateJobById(JobRequest jobRequest, Long id) {
         Job existingJob = jobRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Job not found with id: "+id));
         existingJob.setTitle(jobRequest.getTitle());
@@ -60,6 +65,7 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    @CacheEvict(value = "job", key="#id")
     public void deleteJobById(Long id) {
         Job existingJob = jobRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Job not found with id: "+id));
         jobRepo.delete(existingJob);
