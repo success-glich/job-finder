@@ -21,7 +21,7 @@ spring:
       org.hibernate.type.descriptor.sql.BasicBinder: trace
   redis:
     host: 127.0.0.1
-    port: 6379
+    port: 6378
 #    password: # Optional if Redis has no password
 #      com.
 
